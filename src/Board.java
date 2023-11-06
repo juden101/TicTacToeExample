@@ -73,7 +73,7 @@ class Board {
 
     private boolean checkRow(int row, char symbol) {
         for (int col = 0; col < size; col++) {
-            if (board[row][col].getSymbol() != symbol) {
+            if (getCell(row, col) != symbol) {
                 return false;
             }
         }
@@ -82,7 +82,7 @@ class Board {
 
     private boolean checkColumn(int col, char symbol) {
         for (int row = 0; row < size; row++) {
-            if (board[row][col].getSymbol() != symbol) {
+            if (getCell(row, col) != symbol) {
                 return false;
             }
         }
@@ -91,7 +91,7 @@ class Board {
 
     private boolean checkMainDiagonal(char symbol) {
         for (int i = 0; i < size; i++) {
-            if (board[i][i].getSymbol() != symbol) {
+            if (getCell(i, i) != symbol) {
                 return false;
             }
         }
@@ -100,7 +100,7 @@ class Board {
 
     private boolean checkAntiDiagonal(char symbol) {
         for (int i = 0; i < size; i++) {
-            if (board[i][size - 1 - i].getSymbol() != symbol) {
+            if (getCell(i, size - 1 - i) != symbol) {
                 return false;
             }
         }
